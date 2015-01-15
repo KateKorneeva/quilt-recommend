@@ -163,12 +163,12 @@ p {
 
 .hero {
   position: relative;
-  background: url(http://srdjanpajdic.com/slike/2.jpg) no-repeat center center fixed;
+  background-color: #34495e;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   text-align: center;
-  color: #fff;
+  color: #f39c12;
   padding-top: 110px;
   min-height: 500px;
   letter-spacing: 2px;
@@ -180,40 +180,9 @@ p {
 }
 .hero h1 span {
   font-size: 25px;
-  color: #e8f380;
-  border-bottom: 2px solid #e8f380;
+  color: #f1c40f;
   padding-bottom: 12px;
   line-height: 3;
-}
-
-.mouse {
-  display: block;
-  margin: 0 auto;
-  width: 26px;
-  height: 46px;
-  border-radius: 13px;
-  border: 2px solid #e8f380;
-  bottom: 40px;
-  position: absolute;
-  left: 50%;
-  margin-left: -14px;
-}
-.mouse span {
-  display: block;
-  margin: 6px auto;
-  width: 2px;
-  height: 2px;
-  border-radius: 4px;
-  background: #e8f380;
-  border: 1px solid transparent;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: scroll;
-  animation-name: scroll;
 }
 
 @-webkit-keyframes scroll {
