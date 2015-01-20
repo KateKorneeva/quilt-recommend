@@ -10,6 +10,7 @@
   opacity: 0;
   top: -100px;
   padding-bottom: 6px;
+  max-height: 80px;
 }
 @media only screen and (max-width: 766px) {
   .head {
@@ -133,6 +134,14 @@ h1 {
   }
 }
 
+.question {
+  max-width: 80%;
+}
+
+.checkmark {
+  float: right;
+}
+
 .banner {
   background: url('../img/header-bg.jpg') repeat center;
   -webkit-background-size: cover;
@@ -156,17 +165,13 @@ h1 {
   max-height: 500px;
   min-height: 400px;
 }
-.hero:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  height: 100%;
-  top: 0; right: 0; left: 0;
-  filter: blur(15px);
-  -webkit-filter: blur(15px);
-  -moz-filter: blur(15px);
-  -o-filter: blur(15px);
-  -ms-filter: blur(15px);
+
+.hero h1 {
+  color: #dbd48b;
+  font-size: 70px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  margin-top: 60px;
 }
 
 @media only screen and (max-width: 766px) {
@@ -176,12 +181,6 @@ h1 {
   }
 }
 
-.hero h1 {
-  color: #dbd48b;
-  font-size: 50px;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 100;
-}
 .hero h1 span {
   font-size: 30px;
   line-height: 100px;
