@@ -181,7 +181,7 @@ qlist.buildQuest = function (sentenceText) {
 qlist.display = function() {
     if (qlist.sections.length > 0) {
         for (var i = 0; i < qlist.sections.length; i++) {
-            qlist.buildHeader(qlist.sections[i].questions[1]);
+            qlist.buildQuest(qlist.sections[i].questions[1]);
         }
     }
 };
