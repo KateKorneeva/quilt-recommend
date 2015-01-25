@@ -1,8 +1,3 @@
-
-var HTMLsection = "<div class = 'row content'><h1 class='sec07'>%headPlaceh%</h1>%listPlaceh%</div>";
-var HTMLquestion = "<div class='quest'><div class='sent'>%questPlaceh%</div><div class='checkmark'>\
-<label class='toggle'><input type='checkbox'><span data-unchecked='Да' data-checked='Нет'></span></label></div></div>";
-
 var qlist = {
     "sections": [
         {
@@ -155,7 +150,6 @@ var qlist = {
     ]
 };
 
-
 qlist.buildSection = function (sectionId, headerText) {
     var row = document.createElement("div");
     var header = document.createElement("h1");
@@ -166,25 +160,12 @@ qlist.buildSection = function (sectionId, headerText) {
     document.body.appendChild(row);
 };
 
-
-// <div class='quest'>
-//     <div class='sent'>%questPlaceh%
-//     </div>
-//     <div class='checkmark'>
-//         <label class='toggle'>
-//             <input type='checkbox'>
-//                 <span data-unchecked='Да' data-checked='Нет'>
-//                 </span>
-//         </label>
-//     </div>
-// </div>
-
 qlist.buildAnswer = function (questionRef) {
     var checkmark = document.createElement("div");
     var toggle = document.createElement("label");
     checkmark.classList.add("checkmark");
     toggle.classList.add("toggle");
-    toggle.innerHTML = '<input type="checkbox"><span data-unchecked="Да" data-checked="Нет">';
+    toggle.innerHTML = '<input type="checkbox" class="checkbox"><span data-unchecked="Да" data-checked="Нет"></span>';
     checkmark.appendChild(toggle);
     questionRef.appendChild(checkmark);
 };
@@ -212,4 +193,15 @@ qlist.display = function() {
         }
     }
 };
+
+
+var count = function () {
+    var checkboxes = document.getElementsByClassName("checkbox");
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked === false) {
+        }
+    }
+};
+
 qlist.display();
