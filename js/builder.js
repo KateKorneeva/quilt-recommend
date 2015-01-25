@@ -156,6 +156,17 @@ var qlist = {
 };
 
 
+qlist.buildSection = function (sectionId, headerText) {
+    var row = document.createElement("div");
+    var header = document.createElement("h1");
+    row.classList.add("row", "content", "section");
+    header.id = ("sec0" + sectionId);
+    header.appendChild(document.createTextNode(headerText));
+    row.appendChild(header);
+    document.body.appendChild(row);
+};
+
+
 // <div class='quest'>
 //     <div class='sent'>%questPlaceh%
 //     </div>
@@ -168,20 +179,36 @@ var qlist = {
 //     </div>
 // </div>
 
-qlist.buildQuest = function (sentenceText) {
-    var question = document.createElement('div');
-    var sentence = document.createElement('div');
-    sentence.classList.add('sent');
-    question.classList.add('quest');
+qlist.buildAnswer = function (questionRef) {
+    var checkmark = document.createElement("div");
+    var toggle = document.createElement("label");
+    checkmark.classList.add("checkmark");
+    toggle.classList.add("toggle");
+    toggle.innerHTML = '<input type="checkbox"><span data-unchecked="Да" data-checked="Нет">';
+    checkmark.appendChild(toggle);
+    questionRef.appendChild(checkmark);
+};
+
+qlist.buildQuest = function (sectionId, sentenceText) {
+    var question = document.createElement("div");
+    var sentence = document.createElement("div");
+    var sections = document.getElementsByClassName("section");
+    sentence.classList.add("sent");
+    question.classList.add("quest");
     sentence.appendChild(document.createTextNode(sentenceText));
+    
     question.appendChild(sentence);
-    document.body.appendChild(question);
+    qlist.buildAnswer(question);
+    sections[sectionId].appendChild(question);
 };
 
 qlist.display = function() {
     if (qlist.sections.length > 0) {
         for (var i = 0; i < qlist.sections.length; i++) {
-            qlist.buildQuest(qlist.sections[i].questions[1]);
+            qlist.buildSection((i+1), qlist.sections[i].header);
+            for (var j = 0; j < qlist.sections[i].questions.length; j++) {
+                qlist.buildQuest(i, qlist.sections[i].questions[j]);
+            }
         }
     }
 };
