@@ -1,3 +1,24 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #8f8f8f;
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
 .head {
   position: fixed;
   z-index: 999;
@@ -12,10 +33,10 @@
   padding-bottom: 6px;
   max-height: 80px;
 }
+
 @media only screen and (max-width: 766px) {
   .head {
-    max-height: 50px;
-    margin-top: 0px;
+    max-height: 150px;
   }
 }
 
@@ -37,11 +58,13 @@
   line-height: 1;
   margin-bottom: 10px;
 }
+
 @media only screen and (max-width: 766px) {
   .logo {
     display: none;
   }
 }
+
 nav ul {
   list-style: none;
   overflow: hidden;
@@ -49,15 +72,17 @@ nav ul {
   float: right;
   margin-top: 0px;
 }
+
 @media only screen and (max-width: 766px) {
   nav ul {
-    margin-bottom: 22px;
+    margin-bottom: 0;
     float: left;
     text-align: left;
     width: 100%;
     padding: 0;
   }
 }
+
 nav ul li {
   display: inline-block;
   margin-left: 35px;
@@ -65,28 +90,24 @@ nav ul li {
   height: 70px;
   overflow: hidden;
 }
-@media only screen and (max-width: 766px) {
-  nav ul li {
-    width: 20px;
-    margin-left: 6%;
+
+@media only screen and (max-width: 400px) {
+  nav ul li:nth-of-type(5) {
+    margin-left: 55px;
   }
 }
+
+@media only screen and (max-width: 766px) {
+  nav ul li {
+    margin-left: 20px;
+    height: auto;
+  }
+}
+
 nav ul a {
   color: #888888;
   /*text-transform: uppercase;*/
   font-size: 5px;
-}
-.circle-ico {
-  /*border-radius: 50%;*/
-  /*background-color: black;*/
-  /*height: 50px;*/
-  /*width: 50px;*/
-}
-@media only screen and (max-width: 766px) {
-  .circle-ico {
-    height: 20px;
-    width: 20px;
-  }
 }
 
 .row {
@@ -97,28 +118,6 @@ nav ul a {
   padding: 0 2%;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  color: #8f8f8f;
-  background: white;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1 {
-  font-size: 2em;
-  line-height: 2em;
-  text-transform: uppercase;
-}
-
 .content {
   padding: 0 2% 50px;
   min-height: 100vh;  
@@ -127,15 +126,25 @@ h1 {
   font-weight: 300;
 }
 
+.content h1 {
+  font-size: 2em;
+  line-height: 2em;
+  padding-top: 20px;
+}
+
 @media only screen and (max-width: 766px) {
+  .content h1 {
+    padding-top: 80px;
+  }
   .content {
-    font-size: 0.8em;
+    font-size: 0.9em;
     line-height: 1.5em;
   }
 }
 
 .quest {
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .sent {
@@ -152,7 +161,12 @@ h1 {
   background-size: cover;
   min-height: 500px;
   position: relative;
+}
 
+@media only screen and (max-width: 766px) {
+  .banner {
+    min-height: 300px;
+  }
 }
 
 .hero {
@@ -168,27 +182,36 @@ h1 {
   min-height: 400px;
 }
 
+@media only screen and (max-width: 766px) {
+  .hero {
+    min-height: 0;
+  }
+}
+
 .hero h1 {
   color: #dbd48b;
   font-size: 70px;
   font-family: 'Exo 2', sans-serif;
   font-weight: 100;
-  margin-top: 60px;
-}
-
-@media only screen and (max-width: 766px) {
-  .hero h1 {
-    font-size: 10px;
-    line-height: 1.5em;
-  }
 }
 
 .hero h1 span {
   font-size: 30px;
   line-height: 100px;
-  font-weight: 300;
 }
 
+@media only screen and (max-width: 766px) {
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.5em;
+  }
+  .hero h1 span {
+    font-size: 20px;
+  }
+}
+
+
+/*Toggle switches styles*/
 
 .toggle {
   overflow: hidden;
@@ -200,10 +223,12 @@ h1 {
   border: 1px solid #ccc;
   vertical-align: middle;
 }
+
 .toggle input {
   position: absolute;
   visibility: hidden;
 }
+
 .toggle span {
   position: relative;
   background-color: #fff;
@@ -215,12 +240,13 @@ h1 {
      -moz-transition: left 200ms ease-out;
        -o-transition: left 200ms ease-out;
           transition: left 200ms ease-out;
-  }
+}
+
 .toggle :checked + span {
   left: 50%;
 }
 
-/* Default unchecked state */
+/* Default unchecked state*/
 .toggle span:before {
   content: attr(data-unchecked);
   display: block;
@@ -229,8 +255,7 @@ h1 {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 0 1px 1px #aaa;
-  
-  }
+}
 
 /* Checked state */
 .toggle :checked + span:before {
@@ -238,6 +263,16 @@ h1 {
   border-radius: 15px;
   box-shadow: 0 0 1px 1px #dbd48b;
 }
+
+@media only screen and (max-width: 766px) {
+  .toggle {
+    width: 40px;
+  }
+  .toggle span:before {
+    height: 20px;
+  }
+}
+
 
 /*Styles for radial progress diagrams*/
 
@@ -297,7 +332,7 @@ h1 {
 }
 .percents span {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
   color: #888;
   margin-top: 8px;
