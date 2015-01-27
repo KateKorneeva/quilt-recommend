@@ -1,8 +1,3 @@
-
-var HTMLsection = "<div class = 'row content'><h1 class='sec07'>%headPlaceh%</h1>%listPlaceh%</div>";
-var HTMLquestion = "<div class='quest'><div class='sent'>%questPlaceh%</div><div class='checkmark'>\
-<label class='toggle'><input type='checkbox'><span data-unchecked='Да' data-checked='Нет'></span></label></div></div>";
-
 var qlist = {
     "sections": [
         {
@@ -155,38 +150,21 @@ var qlist = {
     ]
 };
 
-
 qlist.buildSection = function (sectionId, headerText) {
     var row = document.createElement("div");
     var header = document.createElement("h1");
     row.classList.add("row", "content", "section");
-    header.id = ("sec0" + sectionId);
+    header.id = ("sec" + sectionId);
     header.appendChild(document.createTextNode(headerText));
     row.appendChild(header);
     document.body.appendChild(row);
 };
 
-
-// <div class='quest'>
-//     <div class='sent'>%questPlaceh%
-//     </div>
-//     <div class='checkmark'>
-//         <label class='toggle'>
-//             <input type='checkbox'>
-//                 <span data-unchecked='Да' data-checked='Нет'>
-//                 </span>
-//         </label>
-//     </div>
-// </div>
-
 qlist.buildAnswer = function (questionRef) {
-    var checkmark = document.createElement("div");
     var toggle = document.createElement("label");
-    checkmark.classList.add("checkmark");
     toggle.classList.add("toggle");
-    toggle.innerHTML = '<input type="checkbox"><span data-unchecked="Да" data-checked="Нет">';
-    checkmark.appendChild(toggle);
-    questionRef.appendChild(checkmark);
+    toggle.innerHTML = '<input type="checkbox" class="checkbox"><span></span>';
+    questionRef.appendChild(toggle);
 };
 
 qlist.buildQuest = function (sectionId, sentenceText) {
@@ -202,7 +180,7 @@ qlist.buildQuest = function (sectionId, sentenceText) {
     sections[sectionId].appendChild(question);
 };
 
-qlist.display = function() {
+qlist.displaySections = function() {
     if (qlist.sections.length > 0) {
         for (var i = 0; i < qlist.sections.length; i++) {
             qlist.buildSection((i+1), qlist.sections[i].header);
@@ -212,4 +190,91 @@ qlist.display = function() {
         }
     }
 };
-qlist.display();
+
+
+qlist.countScore = function () {
+    var sections = document.getElementsByClassName("section");
+    var scores = [];
+    for (var i = 0; i < sections.length; i++) {
+        var currentSection = sections[i];
+        var checkboxes = currentSection.getElementsByClassName("checkbox");
+        scores[i] = 0;
+        for (var j = 0; j < checkboxes.length; j++) {
+            if (checkboxes[j].checked === true) {
+                scores[i] = scores[i] + (100 / checkboxes.length);
+            }
+        };
+    };
+    // var checkboxes = document.getElementsByClassName("checkbox");
+    // for (var i = 0; i < checkboxes.length; i++) {
+    //     if (checkboxes[i].checked === true) {
+    //         score = score + (100 / checkboxes.length);
+    //     }
+    // }
+    return scores;
+};
+
+        // <div class="diagram" data-percent="43">
+        //   <div class="progress">
+        //     <div class="progress-fill"></div>
+        //   </div>
+        //   <div class="percents">
+        //     <div class="percents-wrapper">
+        //       <span>%</span>
+        //     </div>
+        //   </div>
+        // </div>
+
+qlist.buildDiagram = function () {
+    var navItems = document.getElementsByClassName("circle-ico");
+    for (var i = 0; i < navItems.length; i++) {
+        var diagram = document.createElement('div');
+        var progress = document.createElement('div');
+        var progressFill = document.createElement('div');
+        var percents = document.createElement('div');
+        var percentsWrapper  = document.createElement('div');
+        var span = document.createElement('span');
+
+        diagram.classList.add("diagram");
+        progress.classList.add("progress");
+        progressFill.classList.add("progress-fill");
+        percents.classList.add("percents");
+        percentsWrapper.classList.add("percents-wrapper");
+
+        progress.appendChild(progressFill);
+        percents.appendChild(percentsWrapper);
+        percents.appendChild(span);
+        diagram.appendChild(progress);
+        diagram.appendChild(percents);
+
+        navItems[i].appendChild(diagram);
+    };
+};
+
+qlist.displayScore = function () {
+    var scores = qlist.countScore();
+    var diagrams = document.getElementsByClassName("diagram");
+    var percent;
+    var deg;
+    for (var i = 0; i < diagrams.length; i++) {
+        percent = Math.round(scores[i]);
+        deg = 360*percent/100;
+        if (percent > 50) {
+            diagrams[i].classList.add('gt-50');
+        }
+        diagrams[i].getElementsByClassName("progress-fill")[0].style.cssText = 'transform:rotate('+ deg +'deg)';
+        diagrams[i].getElementsByTagName("span")[0].innerHTML = percent + '%';
+    };
+};
+
+qlist.displaySections();
+qlist.buildDiagram();
+qlist.countScore();
+qlist.displayScore();
+
+$('.checkbox').click(function() {
+    qlist.countScore();
+    qlist.displayScore();
+});
+
+
