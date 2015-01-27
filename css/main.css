@@ -61,8 +61,8 @@ nav ul {
 nav ul li {
   display: inline-block;
   margin-left: 35px;
-  line-height: 1.5;
   width: 50px;
+  height: 70px;
   overflow: hidden;
 }
 @media only screen and (max-width: 766px) {
@@ -73,14 +73,14 @@ nav ul li {
 }
 nav ul a {
   color: #888888;
-  text-transform: uppercase;
-  font-size: 12px;
+  /*text-transform: uppercase;*/
+  font-size: 5px;
 }
 .circle-ico {
-  border-radius: 50%;
-  background-color: black;
-  height: 50px;
-  width: 50px;
+  /*border-radius: 50%;*/
+  /*background-color: black;*/
+  /*height: 50px;*/
+  /*width: 50px;*/
 }
 @media only screen and (max-width: 766px) {
   .circle-ico {
@@ -142,14 +142,7 @@ h1 {
   width: 70%;
   margin-right: 10%;
   display: inline-block;
-}
-
-.checkmark {
-  /*float: right;*/
-  display: inline-block;
-  /*vertical-align: top;*/
-  line-height: 1.8em;
-  font-size: 0.7em;
+  vertical-align: middle;
 }
 
 .banner {
@@ -200,21 +193,24 @@ h1 {
 .toggle {
   overflow: hidden;
   display: inline-block;
-  width: 100px;
-  background: #ddd;
-  padding: 0.125em;
+  width: 60px;
+  background: #dbd48b;
   cursor: pointer;
-  }
+  border-radius: 17px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
 .toggle input {
   position: absolute;
   visibility: hidden;
 }
 .toggle span {
   position: relative;
+  background-color: #fff;
   left: 0%;
   display: block;
-  text-transform: uppercase;
-  text-align: center;
+  border-radius: 16px;
+
   -webkit-transition: left 200ms ease-out;
      -moz-transition: left 200ms ease-out;
        -o-transition: left 200ms ease-out;
@@ -222,21 +218,92 @@ h1 {
   }
 .toggle :checked + span {
   left: 50%;
-  }
+}
 
 /* Default unchecked state */
 .toggle span:before {
   content: attr(data-unchecked);
   display: block;
   width: 50%;
-  background-color: #dbd48b;
-  border-radius: 0.15em;
-  box-shadow: inset 0 0.1em 0 rgba(255, 255, 255, 0.3);
-  color: #222;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 1px 1px #aaa;
+  
   }
 
 /* Checked state */
 .toggle :checked + span:before {
   content: attr(data-checked);
-  background-color: #7AC8CC;
-  }
+  border-radius: 15px;
+  box-shadow: 0 0 1px 1px #dbd48b;
+}
+
+/*Styles for radial progress diagrams*/
+
+.diagram {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+}
+.diagram.gt-50 {
+  background-color: #dbd48b;
+}
+
+.progress {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  clip: rect(0, 50px, 50px, 25px);
+}
+.progress .progress-fill {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  clip: rect(0, 25px, 50px, 0);
+  background: #dbd48b;
+  transform: rotate(60deg);
+}
+.gt-50 .progress {
+  clip: rect(0, 25px, 50px, 0);
+}
+.gt-50 .progress .progress-fill {
+  clip: rect(0, 50px, 50px, 25px);
+  background: #E5E5E5;
+}
+
+.percents {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  /*left: calc(50% - 43.4782608696px/2);*/
+  left: 9.5px;
+  top: 9.5px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  text-align: center;
+  display: table;
+}
+.percents span {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #888;
+  margin-top: 8px;
+}
+
+.percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
