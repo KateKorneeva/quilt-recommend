@@ -91,13 +91,16 @@ nav ul li {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 400px) {
+  nav ul li:nth-of-type(5) {
+    margin-left: 55px;
+  }
+}
+
 @media only screen and (max-width: 766px) {
   nav ul li {
     margin-left: 20px;
     height: auto;
-  }
-  nav ul li:nth-of-type(5) {
-    margin-left: 55px;
   }
 }
 
