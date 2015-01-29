@@ -110,6 +110,10 @@ nav ul a {
   font-size: 5px;
 }
 
+button.result {
+
+}
+
 .row {
   width: 100%;
   max-width: 940px;
@@ -269,6 +273,9 @@ nav ul a {
 @media only screen and (max-width: 766px) {
   .toggle {
     width: 40px;
+  }
+  .toggle span {
+    height: 20px;
   }
   .toggle span:before {
     height: 20px;
