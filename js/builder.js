@@ -153,7 +153,9 @@ var qlist = {
 qlist.buildSection = function (sectionId, headerText) {
     var row = document.createElement("div");
     var header = document.createElement("h1");
-    row.classList.add("row", "content", "section");
+    row.classList.add("row");
+    row.classList.add("content");
+    row.classList.add("section");
     header.id = ("sec" + sectionId);
     header.appendChild(document.createTextNode(headerText));
     row.appendChild(header);
@@ -256,13 +258,15 @@ qlist.displayScore = function () {
     var diagrams = document.getElementsByClassName("diagram");
     var percent;
     var deg;
+    var cssTransform;
     for (var i = 0; i < diagrams.length; i++) {
         percent = Math.round(scores[i]);
         deg = 360*percent/100;
         if (percent > 50) {
             diagrams[i].classList.add('gt-50');
         }
-        diagrams[i].getElementsByClassName("progress-fill")[0].style.cssText = 'transform:rotate('+ deg +'deg)';
+        cssTransform = 'transform:rotate('+ deg +'deg);' + '-webkit-transform: rotate('+ deg +'deg);' + '-moz-transform: rotate('+ deg +'deg);' + '-o-transform: rotate('+ deg +'deg);';
+        diagrams[i].getElementsByClassName("progress-fill")[0].style.cssText = cssTransform;
         diagrams[i].getElementsByTagName("span")[0].innerHTML = percent + '%';
     };
 };
