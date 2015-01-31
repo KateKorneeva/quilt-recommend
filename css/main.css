@@ -31,7 +31,7 @@ h1 {
   opacity: 0;
   top: -100px;
   padding-bottom: 6px;
-  max-height: 80px;
+  /*max-height: 80px;*/
 }
 
 @media only screen and (max-width: 766px) {
@@ -68,7 +68,7 @@ h1 {
 nav ul {
   list-style: none;
   overflow: hidden;
-  text-align: right;
+  text-align: center;
   float: right;
   margin-top: 0px;
 }
@@ -85,8 +85,8 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  margin-left: 35px;
-  width: 50px;
+  margin-left: 25px;
+  width: 60px;
   height: 70px;
   overflow: hidden;
 }
@@ -104,14 +104,23 @@ nav ul li {
   }
 }
 
-nav ul a {
-  color: #888888;
-  /*text-transform: uppercase;*/
-  font-size: 5px;
+nav a {
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 11px;
 }
 
-button.result {
+nav p {
+  margin: 0;
+}
 
+.result {
+  border: 1px solid #ddd;
+  background-color: inherit;
+  color: #ddd;
+  margin-top: 50px;
+  display: block;
+  cursor: pointer;
 }
 
 .row {
@@ -125,8 +134,8 @@ button.result {
 .content {
   padding: 0 2% 50px;
   min-height: 100vh;  
-  font-size: 1.2em;
-  line-height: 2.2em;
+  font-size: 1.1em;
+  line-height: 1.8em;
   font-weight: 300;
 }
 
@@ -214,6 +223,12 @@ button.result {
   }
 }
 
+.item {
+  display: inline-block;
+  margin: 2%;
+  padding: 2%;
+  background-color: #abc;
+}
 
 /*Toggle switches styles*/
 
@@ -291,6 +306,8 @@ button.result {
   border-radius: 50%;
   background-color: #E5E5E5;
   position: relative;
+  margin: auto;
+  margin-top: 5px;
 }
 .diagram.gt-50 {
   background-color: #dbd48b;

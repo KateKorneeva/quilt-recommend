@@ -19,6 +19,16 @@ var qlist = {
                 "В компании вы стараетесь поднять людям настроение.",
                 "Последнее слово и решение вы оставляете за собой.",
                 "Вы самодостаточный человек."
+            ],
+            "items": [
+                {
+                    "name": "Апельсины",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Выход в астрал",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         },
         {
@@ -40,6 +50,16 @@ var qlist = {
                 "Вы осторожный человек.",
                 "У вас хорошая память.",
                 "Вы не быстрый человек."
+            ],
+            "items": [
+                {
+                    "name": "Духи скалистых гор",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Муладхара",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         },
         {
@@ -61,6 +81,16 @@ var qlist = {
                 "Вам дают значительно меньше лет, чем есть на самом деле.",
                 "Вы считаете, что люди склонны к обману.",
                 "Вы часто во многом сомневаетесь."
+            ],
+            "items": [
+                {
+                    "name": "Ида и пингала",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Излучение чакр",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         },
         {
@@ -76,12 +106,22 @@ var qlist = {
                 "Вам нравится заботиться о людях, делать для них какие-то приятные вещи.",
                 "Вы спокойно и методично занимаетесь делами, нетерпение вам не свойственно.",
                 "В случае напряженной жизненной ситуации вы стараетесь принять ее, не пытаясь изменить окружающий мир",
-                "В выборе одежды для вас важны две детали: она должна быть одновременно удобной и асивой. Если какая- то из деталей отсутствует, вы эту одежду не покупаете",
+                "В выборе одежды для вас важны две детали: она должна быть одновременно удобной и красивой. Если какая- то из деталей отсутствует, вы эту одежду не покупаете",
                 "Вы считаете, что должны нести в этот мир любовь и красоту.",
                 "Вы очень привязаны к друзьям и подругам и готовы им многое простить.",
                 "Вас легко разжалобить и надавить на жалость.",
                 "Вы любите накапливать имущество (бытовая техника, вещи, автомобили, недвижимость).",
                 "Вы любите создавать атмосферу комфорта и уюта вокруг себя."
+            ],
+            "items": [
+                {
+                    "name": "Пляжные фрукты",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Выход в астрал",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         },
         {
@@ -103,6 +143,16 @@ var qlist = {
                 "Вам часто говорят, что вы излишне резки и категоричны.",
                 "Вы предпочитаете конкретику и не любите пустого времяпрепровождения.",
                 "Вам нравится заниматься спортом и особенно единоборствами."
+            ],
+            "items": [
+                {
+                    "name": "Апельсины",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Три слона",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         },
         {
@@ -124,6 +174,16 @@ var qlist = {
                 "Вы хороший психолог и видите мотивы других людей, умеете ими манипулировать в их интересах.",
                 "Вы обладаете дипломатичностью и чувством такта и можете примерять спорящих людей. ",
                 "Вы разносторонний человек и интересуетесь разными сферами жизни."
+            ],
+            "items": [
+                {
+                    "name": "Коврик аопвлп",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Коврик пвапвап",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         },
         {
@@ -145,12 +205,23 @@ var qlist = {
                 "Вы любите наставлять и учить других людей.",
                 "Вы считаете, что к деньгам надо подходить разумно и тратить их с умом.",
                 "Вы педантичны и точны."
+            ],
+            "items": [
+                {
+                    "name": "Коврик цукцк",
+                    "image": "http://placehold.it/270x370"
+                },
+                {
+                    "name": "Коврик апвпкн",
+                    "image": "http://placehold.it/270x370"
+                }
             ]
         }
     ]
 };
 
 qlist.buildSection = function (sectionId, headerText) {
+    var container = document.getElementById("sections");
     var row = document.createElement("div");
     var header = document.createElement("h1");
     row.classList.add("row");
@@ -159,7 +230,7 @@ qlist.buildSection = function (sectionId, headerText) {
     header.id = ("sec" + sectionId);
     header.appendChild(document.createTextNode(headerText));
     row.appendChild(header);
-    document.body.appendChild(row);
+    container.appendChild(row);
 };
 
 qlist.buildAnswer = function (questionRef) {
@@ -171,6 +242,7 @@ qlist.buildAnswer = function (questionRef) {
 
 qlist.buildQuest = function (sectionId, sentenceText) {
     var question = document.createElement("div");
+    var question = document.createElement("div");
     var sentence = document.createElement("div");
     var sections = document.getElementsByClassName("section");
     sentence.classList.add("sent");
@@ -180,6 +252,27 @@ qlist.buildQuest = function (sectionId, sentenceText) {
     question.appendChild(sentence);
     qlist.buildAnswer(question);
     sections[sectionId].appendChild(question);
+};
+
+qlist.buildItem = function (imageSrc, name) {
+    var container = document.getElementById("recommend");
+    var item = document.createElement("div");
+    var p = document.createElement("p");
+    p.appendChild(document.createTextNode(name));
+    item.classList.add('item');
+    item.innerHTML = '<img src = ' + imageSrc + ' alt = ' + name + ' />';
+    item.appendChild(p);
+    container.appendChild(item);
+};
+
+qlist.buildNoItem = function () {
+    var container = document.getElementById("recommend");
+    container.appendChild(document.createTextNode("Вы пока не ответили на вопросы ни по одному типу"));
+};
+
+qlist.clearRecommend = function () {
+    var container = document.getElementById("recommend");
+    container.innerHTML = "";
 };
 
 qlist.displaySections = function() {
@@ -193,6 +286,24 @@ qlist.displaySections = function() {
     }
 };
 
+qlist.displayRecommend = function () {
+    qlist.clearRecommend();
+    var scores = qlist.countScore();
+    var empty = 0;
+    for (var i = 0; i < qlist.sections.length; i++) {
+        if (scores[i] > 0) {
+            for (var j = 0; j < qlist.sections[i].items.length; j++) {
+                var name = qlist.sections[i].items[j].name;
+                var image = qlist.sections[i].items[j].image;
+                qlist.buildItem(image, name);
+            }
+            empty = 1;
+        }
+    }
+    if (empty === 0) {
+        qlist.buildNoItem ();
+    }
+};
 
 qlist.countScore = function () {
     var sections = document.getElementsByClassName("section");
@@ -265,7 +376,8 @@ qlist.displayScore = function () {
         if (percent > 50) {
             diagrams[i].classList.add('gt-50');
         }
-        cssTransform = 'transform:rotate('+ deg +'deg);' + '-webkit-transform: rotate('+ deg +'deg);' + '-moz-transform: rotate('+ deg +'deg);' + '-o-transform: rotate('+ deg +'deg);';
+        cssTransform = 'transform:rotate('+ deg +'deg);' + '-webkit-transform: rotate('+ deg +'deg);' +
+         '-moz-transform: rotate('+ deg +'deg);' + '-o-transform: rotate('+ deg +'deg);';
         diagrams[i].getElementsByClassName("progress-fill")[0].style.cssText = cssTransform;
         diagrams[i].getElementsByTagName("span")[0].innerHTML = percent + '%';
     };
@@ -280,5 +392,6 @@ $('.checkbox').click(function() {
     qlist.countScore();
     qlist.displayScore();
 });
-
-
+$('.result').click(function() {
+    qlist.displayRecommend();
+});

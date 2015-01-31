@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
+        <!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -21,35 +21,31 @@
 
             <div class="row">
                 <a class="logo" href="#">quiltlada</a>
-
                 <nav>
                     <ul>
-                        <li><a href="#sec1"><div id="ico1" class="circle-ico"></div></a></li>
-                        <li><a href="#sec2"><div id="ico2" class="circle-ico"></div></a></li>
-                        <li><a href="#sec3"><div id="ico3" class="circle-ico"></div></a></li>
-                        <li><a href="#sec4"><div id="ico4" class="circle-ico"></div></a></li>
-                        <li><a href="#sec5"><div id="ico5" class="circle-ico"></div></a></li>
-                        <li><a href="#sec6"><div id="ico6" class="circle-ico"></div></a></li>
-                        <li><a href="#sec7"><div id="ico7" class="circle-ico"></div></a></li><!-- 
-                        <li><a href="#sec1"><div id="ico1" class="circle-ico">Солнце</div></a></li>
-                        <li><a href="#sec2"><div id="ico2" class="circle-ico">Луна</div></a></li>
-                        <li><a href="#sec3"><div id="ico3" class="circle-ico">Меркурий</div></a></li>
-                        <li><a href="#sec4"><div id="ico4" class="circle-ico">Венера</div></a></li>
-                        <li><a href="#sec5"><div id="ico5" class="circle-ico">Марс</div></a></li>
-                        <li><a href="#sec6"><div id="ico6" class="circle-ico">Юпитер</div></a></li>
-                        <li><a href="#sec7"><div id="ico7" class="circle-ico">Сатурн</div></a></li> -->
+                        <li><a href="#sec1"><p>Солнце</p><div id="ico1" class="circle-ico"></div></a></li>
+                        <li><a href="#sec2"><p>Луна</p><div id="ico2" class="circle-ico"></div></a></li>
+                        <li><a href="#sec3"><p>Меркурий</p><div id="ico3" class="circle-ico"></div></a></li>
+                        <li><a href="#sec4"><p>Венера</p><div id="ico4" class="circle-ico"></div></a></li>
+                        <li><a href="#sec5"><p>Марс</p><div id="ico5" class="circle-ico"></div></a></li>
+                        <li><a href="#sec6"><p>Юпитер</p><div id="ico6" class="circle-ico"></div></a></li>
+                        <li><a href="#sec7"><p>Сатурн</p><div id="ico7" class="circle-ico"></div></a></li>
                     </ul>
-                    <button class="result">Показать результат</button>
+
                 </nav>
-
-            </div> <!-- / row -->
-
+            </div>
+            <div class="row">
+                <a href="#recommend"><button class="result">Показать результат</button></a>
+            </div>
         </header>
+
         <div class="banner">
             <div class="hero">
                 <h1>выбор квилта<br><span>околонаучный подход</span></h1>
             </div>
         </div>
+        <div id="sections"></div>
+        <div class="row" id="recommend"></div>
         <script src="js/main.js"></script>
         <script src="js/builder.js"></script>
     </body>
