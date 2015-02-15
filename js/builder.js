@@ -23,11 +23,11 @@ var qlist = {
             "items": [
                 {
                     "name": "Апельсины",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item1.jpg"
                 },
                 {
                     "name": "Выход в астрал",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item2.jpg"
                 }
             ]
         },
@@ -54,11 +54,11 @@ var qlist = {
             "items": [
                 {
                     "name": "Духи скалистых гор",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item3.jpg"
                 },
                 {
                     "name": "Муладхара",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item4.jpg"
                 }
             ]
         },
@@ -85,11 +85,11 @@ var qlist = {
             "items": [
                 {
                     "name": "Ида и пингала",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item5.jpg"
                 },
                 {
                     "name": "Излучение чакр",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item6.jpg"
                 }
             ]
         },
@@ -116,11 +116,11 @@ var qlist = {
             "items": [
                 {
                     "name": "Пляжные фрукты",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item7.jpg"
                 },
                 {
                     "name": "Выход в астрал",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item8.jpg"
                 }
             ]
         },
@@ -147,11 +147,11 @@ var qlist = {
             "items": [
                 {
                     "name": "Апельсины",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item1.jpg"
                 },
                 {
                     "name": "Три слона",
-                    "image": "http://placehold.it/270x370"
+                    "image": "./img/item6.jpg"
                 }
             ]
         },
@@ -177,12 +177,12 @@ var qlist = {
             ],
             "items": [
                 {
-                    "name": "Коврик аопвлп",
-                    "image": "http://placehold.it/270x370"
+                    "name": "Муладхара",
+                    "image": "./img/item2.jpg"
                 },
                 {
-                    "name": "Коврик пвапвап",
-                    "image": "http://placehold.it/270x370"
+                    "name": "Выход в астрал",
+                    "image": "./img/item7.jpg"
                 }
             ]
         },
@@ -208,12 +208,12 @@ var qlist = {
             ],
             "items": [
                 {
-                    "name": "Коврик цукцк",
-                    "image": "http://placehold.it/270x370"
+                    "name": "Духи скалистых гор",
+                    "image": "./img/item8.jpg"
                 },
                 {
-                    "name": "Коврик апвпкн",
-                    "image": "http://placehold.it/270x370"
+                    "name": "Три слона",
+                    "image": "./img/item9.jpg"
                 }
             ]
         }
@@ -318,25 +318,8 @@ qlist.countScore = function () {
             }
         };
     };
-    // var checkboxes = document.getElementsByClassName("checkbox");
-    // for (var i = 0; i < checkboxes.length; i++) {
-    //     if (checkboxes[i].checked === true) {
-    //         score = score + (100 / checkboxes.length);
-    //     }
-    // }
     return scores;
 };
-
-        // <div class="diagram" data-percent="43">
-        //   <div class="progress">
-        //     <div class="progress-fill"></div>
-        //   </div>
-        //   <div class="percents">
-        //     <div class="percents-wrapper">
-        //       <span>%</span>
-        //     </div>
-        //   </div>
-        // </div>
 
 qlist.buildDiagram = function () {
     var navItems = document.getElementsByClassName("circle-ico");

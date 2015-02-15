@@ -11,6 +11,10 @@ body {
   margin: 0;
 }
 
+footer {
+  height: 400px;
+}
+
 a {
   text-decoration: none;
 }
@@ -142,7 +146,7 @@ nav p {
 .content h1 {
   font-size: 2em;
   line-height: 2em;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 @media only screen and (max-width: 766px) {
@@ -225,9 +229,22 @@ nav p {
 
 .item {
   display: inline-block;
-  margin: 2%;
-  padding: 2%;
-  background-color: #abc;
+  margin: 3%;
+  overflow: hidden;
+  
+  background-color: #ddd;
+  width: 145px;
+  height: 250px;
+  box-shadow: 0 0 5px #aaa;
+}
+
+.item img {
+  min-width: 90%;
+  min-height: 90%;
+}
+
+.item p {
+  margin: 0.5em;
 }
 
 /*Toggle switches styles*/
