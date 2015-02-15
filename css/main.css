@@ -17,6 +17,7 @@ footer {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 h1 {
@@ -40,7 +41,7 @@ h1 {
 
 @media only screen and (max-width: 766px) {
   .head {
-    max-height: 150px;
+    height: 200px;
   }
 }
 
@@ -49,7 +50,7 @@ h1 {
   opacity: 1;
   top: 0px;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
-  }
+}
 
 .logo {
   width: 50px;
@@ -85,6 +86,9 @@ nav ul {
     width: 100%;
     padding: 0;
   }
+  nav ul p {
+    text-align: center;
+  }
 }
 
 nav ul li {
@@ -97,13 +101,13 @@ nav ul li {
 
 @media only screen and (max-width: 400px) {
   nav ul li:nth-of-type(5) {
-    margin-left: 55px;
+    margin-left: 45px;
   }
 }
 
 @media only screen and (max-width: 766px) {
   nav ul li {
-    margin-left: 20px;
+    margin-left: 10px;
     height: auto;
   }
 }
@@ -116,6 +120,10 @@ nav a {
 
 nav p {
   margin: 0;
+}
+
+.show-res {
+  height: 20px;
 }
 
 .result {
@@ -227,11 +235,14 @@ nav p {
   }
 }
 
+#recommend {
+  margin-top: 80px;
+}
+
 .item {
   display: inline-block;
   margin: 3%;
-  overflow: hidden;
-  
+  overflow: hidden;  
   background-color: #ddd;
   width: 145px;
   height: 250px;
